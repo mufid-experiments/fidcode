@@ -21,8 +21,8 @@ For following array, the result is also 1.
 
 Notice that, for a SINGLE ROW ARRAY, the result is always 1. Let's inspect two rows array:
 
-   1 0 0 0 1 1 0
-   1 0 1 0 1 1 0
+    1 0 0 0 1 1 0
+    1 0 1 0 1 1 0
 
 Challenge: can we identify of square areas, by only iterating each rows and columns?
 
@@ -41,33 +41,33 @@ We iterate i,j, such that:
 
 By the end of iteration, we will get dp with following values.
 
-   1 0 0 0 1 1 0
-   1 0 1 0 1 2 0
+    1 0 0 0 1 1 0
+    1 0 1 0 1 2 0
 
 The following algorithm holds. Let's extend the array to 3 rows:
 
-   1 0 0 0 1 1 0
-   1 0 1 0 1 1 0
-   1 0 1 0 1 1 0
+    1 0 0 0 1 1 0
+    1 0 1 0 1 1 0
+    1 0 1 0 1 1 0
 
 If we re-run the above algorithm, we will get dp with following values:
 
-   1 0 0 0 1 1 0
-   1 0 1 0 1 2 0
-   1 0 1 0 1 2 0
+    1 0 0 0 1 1 0
+    1 0 1 0 1 2 0
+    1 0 1 0 1 2 0
 
 However, above algorithm doesn't work if longest side is >2. Let's make
 a 3x3 square and re-run the algoritm:
 
-   array:
-   1 0 0 0 1 1 1
-   1 0 1 0 1 1 1
-   1 0 1 0 1 1 1
-
-   dp: 
-   1 0 0 0 1 1 1
-   1 0 1 0 1 2 1
-   1 0 1 0 1 1 1
+    array:
+    1 0 0 0 1 1 1
+    1 0 1 0 1 1 1
+    1 0 1 0 1 1 1
+   
+    dp: 
+    1 0 0 0 1 1 1
+    1 0 1 0 1 2 1
+    1 0 1 0 1 1 1
 
 That said, we have identified base step of the dynamic programming solution.
 Let's rebuild the algorithm, such that it works for longest side > 2
